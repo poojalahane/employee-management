@@ -9,7 +9,7 @@ function Register() {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`${window.location.origin}/api/auth/register`, { username, password });
+            await axios.post(`http://localhost:5000/api/auth/register`, { username, password });
             alert('Registration successful! You can now login.');
             window.location.href = '/'; // Redirect to login
         } catch (err) {

@@ -8,7 +8,8 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`${window.location.origin}/api/auth/login`, { username, password });
+            // const res = await axios.post(`${window.location.origin}/api/auth/login`, { username, password });
+            const res = await axios.post(`http://localhost:5000/api/auth/login`, { username, password });
             localStorage.setItem('token', res.data.token);
             // Redirect to Employee List
             window.location.href = '/dashboard';
